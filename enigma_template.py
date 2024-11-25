@@ -1,56 +1,32 @@
-# enigma.py
-# description: a simple rotational ciphertext program that can create
-# custom encoded messages, as well as encode and decode from file.
-# author: YOUR_NAME_HERE
-# created: MM.DD.YYYY
-# last update:  MM.DD.YYYY
-import random
+from random import randint
 
-# we'll be using this string for the majority of our translations
-alphabet = "abcdefghijklmnopqrstuvwxyz"
-
-# user inputs a message and selects a key (or random), the message is then translated using the cipher
-def encode_message():
-    pass
-
-# encodes a target file, similarly to encode_message, except now targeting a filename
-def encode_file():
-    pass
-
-# decodes target file using a user-specified key. If key is unknown, a keypress should
-# call decode_unknown_key()
-def decode_file():
-    pass
-
-# runs if the key is unknown. If this is true, print out all possible decoding combinations.
-def decode_unknown_key(filename):
-   pass
+running = True
 
 
-# main method declaration
-def main():
-    while True:
-        print(f"Welcome to the Enigma Machine!\n"
-              f"Please select an option:\n"
-              f"[1]: Encode a custom message.\n"
-              f"[2]: Encode file.\n"
-              f"[3]: Decode file.\n"
-              f"[4]: Exit.")
+while running == True:
+    print("Welcome to Enigma Machine \n Please select an option")
+    print("[1]: Ecode a custom message \n [2]: Encode file. \n [3]: Decode file. \n [4]: Exit.")
 
-        selection = input("Choose an option:")
+    try:
+        choice = int(input("choose and option"))
 
-        if selection == "1":
-            encode_message()
-        elif selection == "2":
-            encode_file()
-        elif selection == "3":
-            decode_file()
-        elif selection == "4":
-            print("Goodbye.")
+        if 0 > choice or choice > 4:
+            print("that isn't an option")
+            continue
+
+        if choice == 1:
+            message = input("Please enter the message you'd like to encode: ")
+            rotate = int(input("Enter the rotational cipher key. (press enter for a random value")) or randint(1, 26)
+
+        elif choice == 2:
+
+        elif choice == 3:
+
+        elif choice == 4:
             exit()
-        else:
-            print("Invalid choice. Please try again.")
 
-# runs on program start
-if __name__ == "__main__":
-    main()
+
+
+
+    except ValueError:
+        print("you got a value error")
